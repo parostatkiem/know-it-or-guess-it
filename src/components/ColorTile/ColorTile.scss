@@ -1,14 +1,16 @@
 .color-tile {
   width: 6em;
   height: 4em;
-  border: 2px solid black;
+  border: 1px solid black;
   background: white;
   cursor: pointer;
 
   transition: transform 0.1s, scale 0.3s;
 
+  text-shadow: 1px 1px 3px white;
+
   &:hover {
-    scale: 1.2;
+    scale: 1.4;
   }
   //   box-shadow: 2px 2px 5px black;
 }

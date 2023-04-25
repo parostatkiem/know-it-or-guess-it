@@ -1,7 +1,7 @@
 import './ColorTile.scss';
 import { useEffect, useRef } from 'react';
 
-const ColorTile = ({ mouseX, mouseY }) => {
+const ColorTile = ({ mouseX, mouseY, color }) => {
   const ref = useRef(null);
 
   const calculateTransform = () => {
@@ -17,9 +17,11 @@ const ColorTile = ({ mouseX, mouseY }) => {
   return (
     <div
       ref={ref}
-      style={{ transform: calculateTransform() }}
+      style={{ transform: calculateTransform(), backgroundColor: '#' + color }}
       className="color-tile"
-    ></div>
+    >
+      {/* {color} */}
+    </div>
   );
 };
 export default ColorTile;
