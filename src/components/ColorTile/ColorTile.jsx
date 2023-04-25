@@ -1,13 +1,13 @@
 import './ColorTile.scss';
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, forwardRef } from 'react';
 
-const ColorTile = ({ mouseX, mouseY, color }) => {
-  const ref = useRef(null);
+const ColorTile = ({ mouseX, mouseY, color, onClick, className }) => {
+  const localRef = useRef(null);
 
   const calculateTransform = () => {
-    if (!ref.current) return '';
+    if (!localRef.current) return '';
 
-    const rect = ref.current.getBoundingClientRect();
+    const rect = localRef.current.getBoundingClientRect();
 
     const rotationY = ((rect.left + rect.right) / 2 - mouseX) / 600;
     const rotationX = ((rect.top + rect.bottom) / 2 - mouseY) / 600;
@@ -16,9 +16,10 @@ const ColorTile = ({ mouseX, mouseY, color }) => {
 
   return (
     <div
-      ref={ref}
+      onClick={onClick}
+      ref={localRef}
       style={{ transform: calculateTransform(), backgroundColor: '#' + color }}
-      className="color-tile"
+      className={'color-tile ' + className}
     >
       {/* {color} */}
     </div>

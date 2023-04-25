@@ -36,11 +36,12 @@ aside {
   user-select: none;
 
   .lifes {
-    color: rgba(255, 100, 100, 0.8);
+    color: rgba(255, 80, 80, 0.8);
     text-shadow: 2px 2px 5px black;
   }
 
   .level {
+    font-size: 0.8em;
     display: flex;
     flex-direction: column;
     align-items: center;

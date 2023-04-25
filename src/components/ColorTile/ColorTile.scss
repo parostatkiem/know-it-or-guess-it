@@ -1,8 +1,7 @@
 .color-tile {
-  width: 6em;
-  height: 4em;
-  border: 1px solid black;
-  background: white;
+  width: 90px;
+  height: 96px;
+
   cursor: pointer;
 
   transition: transform 0.1s, scale 0.3s;
@@ -12,5 +11,22 @@
   &:hover {
     scale: 1.4;
   }
-  //   box-shadow: 2px 2px 5px black;
+  clip-path: path(
+    'M 73.6 19.2 h -9.6 V 11.2 c 0 -2.651 -2.149 -4.8 -4.8 -4.8 H 4.8 C 2.149 6.4 0 8.549 0 11.2 v 80 c 0 2.651 2.149 4.8 4.8 4.8 h 54.4 c 2.651 0 4.8 -2.149 4.8 -4.8 v -8.422 l 16.1212 -7.1954 C 85.8792 73.0126 89.6 67.2776 89.6 60.972 V 35.2 c 0 -8.8224 -7.1776 -16 -16 -16 z m 3.2 41.772 a 3.2036 3.2036 90 0 1 -1.8958 2.9222 L 64 68.761 V 32 h 9.6 z z z'
+  );
+
+  .reveal &.incorrect {
+    animation: revealIncorrect forwards 1s ease-out;
+  }
+
+  @keyframes revealIncorrect {
+    from {
+      scale: 1;
+      opacity: 1;
+    }
+    to {
+      scale: 0.1;
+      opacity: 0;
+    }
+  }
 }
