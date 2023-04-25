@@ -96,7 +96,10 @@ function App() {
         onMouseMove={handleMouseMove}
         className={'App ' + (isRevealing ? 'reveal' : '')}
       >
-        <span className="color-code">#{correctColor}</span>
+        <h3>
+          Select the mug painted in <br />
+          <span className="color-code">#{correctColor}</span>
+        </h3>
         <main>
           {possibleColors.map((c, i) => (
             <ColorTile
