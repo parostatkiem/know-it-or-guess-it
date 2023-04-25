@@ -1,7 +1,7 @@
-// Background 
+// Background
 $white: #fff;
-$orange: #FF7644;
-$green: #7FB069;
+$orange: #ff7644;
+$green: #7fb069;
 $blue: #556270;
 $tran-speed: 60s;
 
@@ -13,82 +13,66 @@ $particle-min-speed: 5000; // ms
 $particle-max-speed: 15000; // ms
 $particle-max-delay: 12000; // ms
 
-
-
 /*** <--- CONTAINER ---> ***/
 
 body {
-    font-size: 16px;
-    overflow: hidden;
-    background: $blue;
-    animation: changeBg $tran-speed infinite alternate;
+  font-size: 16px;
+  overflow: hidden;
+  background: radial-gradient(
+    circle,
+    rgba(227, 197, 11, 1) 0%,
+    rgba(255, 179, 40, 1) 48%,
+    rgba(212, 194, 34, 1) 100%
+  );
 }
-
-@keyframes changeBg {
-    0% {
-        background: $blue;
-    }
-
-    33.33333333% {
-        background: $green;
-    }
-
-    66.66666666% {
-        background: $orange;
-    }
-}
-
-
 
 /*** <--- PARTICLES ---> ***/
 
 .bottom-particles {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+
+  .bubble {
+    opacity: 0;
     position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
+    bottom: -$particle-size;
+    width: $particle-size;
+    height: $particle-size;
+    background-color: rgba($white, 0.5);
+    border-radius: 50%;
 
-    .bubble {
-        opacity: 0;
-        position: absolute;
-        bottom: -$particle-size;
-        width: $particle-size;
-        height: $particle-size;
-        background-color: rgba($white , 0.5);
-        border-radius: 50%;
+    // Randomize bubles
+    @for $i from 1 through $particle-count {
+      // random animation speed
+      $speed: random($particle-max-speed) + 0ms;
 
-        // Randomize bubles
-        @for $i from 1 through $particle-count {
+      @if $speed < $particle-min-speed {
+        $speed: $particle-min-speed + 0ms;
+      }
 
-            // random animation speed
-            $speed: random($particle-max-speed)+0ms;
-
-            @if $speed < $particle-min-speed {
-                $speed: $particle-min-speed +0ms;
-            }
-
-            &:nth-child(#{$i}) {
-                left: random(100) + 0%;
-                animation: blow $speed infinite;
-                animation-delay: random($particle-max-delay) + 0ms;
-            }
-        }
-
+      &:nth-child(#{$i}) {
+        left: random(100) + 0%;
+        animation: blow $speed infinite;
+        animation-delay: random($particle-max-delay) + 0ms;
+      }
     }
+  }
 }
 
 @keyframes blow {
-    0% {
-        opacity: 0;
-        transform: translate(0, 0);
-    }
+  0% {
+    opacity: 0;
+    transform: translate(0, 0);
+  }
 
-    20% {
-        opacity: 1;
-    }
+  20% {
+    opacity: 0.7;
+  }
 
-    100% {
-        opacity: 0;
-        transform: translate(0, -$particle-distance) scale(.2);
-    }
+  100% {
+    opacity: 0;
+    transform: translate(0, -$particle-distance) scale(0.2);
+  }
 }

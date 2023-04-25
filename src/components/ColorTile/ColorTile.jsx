@@ -1,5 +1,5 @@
+import { useRef } from 'react';
 import './ColorTile.scss';
-import { useEffect, useRef, forwardRef } from 'react';
 
 const ColorTile = ({ mouseX, mouseY, color, onClick, className }) => {
   const localRef = useRef(null);

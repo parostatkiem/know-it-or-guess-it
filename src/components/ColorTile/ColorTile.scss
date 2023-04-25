@@ -8,6 +8,7 @@
 
   text-shadow: 1px 1px 3px white;
 
+  filter: drop-shadow(2px 2px 5px black);
   &:hover {
     scale: 1.4;
   }
