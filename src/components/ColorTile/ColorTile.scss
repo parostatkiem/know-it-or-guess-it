@@ -7,8 +7,8 @@
   transition: transform 0.1s, scale 0.3s;
 
   text-shadow: 1px 1px 3px white;
+  position: relative;
 
-  filter: drop-shadow(2px 2px 5px black);
   &:hover {
     scale: 1.4;
   }
@@ -28,6 +28,35 @@
     to {
       scale: 0.1;
       opacity: 0;
+    }
+  }
+
+  .eyes {
+    position: absolute;
+    top: 25%;
+    left: 20%;
+    display: flex;
+    gap: 0.5em;
+  }
+
+  .eye {
+    border-radius: 50%;
+    background-color: white;
+    width: 0.8em;
+    height: 0.8em;
+    display: inline-block;
+    position: relative;
+    box-shadow: 1px 1px 5px black;
+
+    .pupil {
+      background: black;
+      width: 40%;
+      height: 40%;
+      display: block;
+      border-radius: 50%;
+      position: absolute;
+      top: 30%;
+      left: 30%;
     }
   }
 }
