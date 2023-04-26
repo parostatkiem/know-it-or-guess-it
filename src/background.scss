@@ -18,11 +18,13 @@ $particle-max-delay: 12000; // ms
 body {
   font-size: 16px;
   overflow: hidden;
-  background: radial-gradient(
-    circle,
-    rgba(227, 197, 11, 1) 0%,
-    rgba(255, 179, 40, 1) 48%,
-    rgba(212, 194, 34, 1) 100%
+  background: linear-gradient(
+    90deg,
+    rgba(254, 224, 80, 1) 0%,
+    rgba(251, 192, 34, 1) 29%,
+    rgba(246, 177, 6, 1) 50%,
+    rgba(251, 192, 34, 1) 72%,
+    rgba(254, 224, 80, 1) 100%
   );
 }
 
