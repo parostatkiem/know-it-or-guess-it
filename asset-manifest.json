@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/know-it-or-guess-it/static/css/main.58c42711.css",
+    "main.js": "/know-it-or-guess-it/static/js/main.352e9bff.js",
+    "index.html": "/know-it-or-guess-it/index.html",
+    "main.58c42711.css.map": "/know-it-or-guess-it/static/css/main.58c42711.css.map",
+    "main.352e9bff.js.map": "/know-it-or-guess-it/static/js/main.352e9bff.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.58c42711.css",
+    "static/js/main.352e9bff.js"
+  ]
+}
